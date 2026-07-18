@@ -1,0 +1,8 @@
+.git
+.idea
+.env
+app
+db.sqlite
+*.md
+.env.example
+.gitignore

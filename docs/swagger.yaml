@@ -1,0 +1,55 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: API for processing VK group addresses.
+  title: VK Group Getter API
+  version: "1.0"
+paths:
+  /groups:
+    post:
+      consumes:
+      - application/json
+      description: Add a VK group address for processing
+      parameters:
+      - description: API key
+        in: header
+        name: X-API-Key
+        required: true
+        type: string
+      - description: VK group address
+        in: body
+        name: address
+        required: true
+        schema:
+          type: object
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Add a VK group
+      tags:
+      - groups
+swagger: "2.0"

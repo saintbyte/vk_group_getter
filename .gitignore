@@ -1,0 +1,5 @@
+.env
+/app
+/db.sqlite
+.idea
+go.sum
